@@ -20,8 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('rfc');
             $table->string('address');
-            $table->string('total');
-            $table->string('methodOfPayment');
             $table->string('gender');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();

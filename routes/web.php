@@ -15,12 +15,20 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
 
 
-Route::post("/registro", [AuthController::class, "register"])->name('register');
+Route::get("/", [PagesController::class, "viewHome"])->name('home');
+
+Route::get("/registro", [PagesController::class, "viewRegister"])->name('page.register');
+Route::post("/register", [AuthController::class, "register"])->name('register');
+Route::get("/login", [PagesController::class, "viewLogin"])->name('view.login');
+Route::post("/login", [AuthController::class, "login"])->name('login');
+
+Route::get("/perfil", [PagesController::class, "viewProfile"])->name('page.perfil');
+
 Route::get("/factura", [PagesController::class, "viewBilling"])->name('page.billing');
 Route::get("/user/{id}", [PagesController::class, "show"])->name('page.user.show');
 Route::post("/billing", [PagesController::class, "store"])->name('page.billing.create');

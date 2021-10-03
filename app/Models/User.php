@@ -29,8 +29,8 @@ class User extends Authenticatable
         'phone',
         'status',
         // Billing
-        'total',
-        'methodOfPayment',
+        // 'total',
+        // 'methodOfPayment',
     ];
 
     /**

@@ -28,13 +28,13 @@ class ProductFactory extends Factory
             'title' => $this->faker->word,
             'description' => $this->faker->paragraph,
             'price' => $this->faker->numberBetween(550, 1600),
-            'category' =>  $this->faker->randomElement(['Mujer', 'Hombre']),
+            'category' =>  $this->faker->randomElement(['Dama', 'Caballero', 'Niño', 'Niña']),
             'brand' => $this->faker->randomElement(['ERMENEGILDO', 'ALEXANDER MCQUEEN', 'HUGO BOSS', 'OFF-WHITE', 'BALENCIAGA']),
             'model' => Str::random(5),
             // 'image' => 'upload-product/pIgNvWQMG8OIQMEMYX9xP0DGGzKwPE9tiiS9rNHq.jpg',
             'status' => $this->faker->randomElement([Product::STATUS_TRUE, Product::STATUS_FALSE]),
             'type' =>  $this->faker->randomElement(['Tenis', 'Zapato casual', 'Bota', 'Botin', 'Calzado de protección']),
-            // 'admin_id' => Admin::all()->random()->id
+            'admin_id' => Admin::all()->random()->id
         ];
     }
 

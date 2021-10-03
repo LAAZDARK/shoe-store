@@ -7,6 +7,7 @@ use App\Models\Billing;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -14,6 +15,28 @@ use Illuminate\Support\Facades\Validator;
 
 class PagesController extends Controller
 {
+
+    public function viewHome()
+    {
+        // $users = User::all();
+
+        return view('pages.index');
+    }
+    public function viewLogin()
+    {
+        return view('pages.login');
+    }
+
+    public function viewRegister()
+    {
+        return view('pages.register');
+    }
+
+    public function viewProfile()
+    {
+        $user = Auth::user();
+        return view('pages.profile', ['user' => $user]);
+    }
 
 
     public function viewBilling()

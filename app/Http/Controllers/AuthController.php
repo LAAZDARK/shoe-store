@@ -21,7 +21,7 @@ class AuthController extends Controller
         $rules = array(
             'name' => 'required',
             'email' => 'required|unique:users,email',
-            // 'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:6|confirmed',
         );
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) return $this->sendError('Validator', $validator->errors()->all(), 422);
@@ -30,13 +30,10 @@ class AuthController extends Controller
         $user = new User();
         $user->fill($input);
         $user->save();
-        // Auth::guard()->login($user);
+        Auth::guard()->login($user);
 
-        // $users = User::all();
 
-        // return view('page.billing', ['users' => $users]);
-
-        return redirect()->route("page.billing");
+        return redirect()->route("home");
     }
 
 
@@ -62,7 +59,7 @@ class AuthController extends Controller
 
             if (Hash::check($request->password, $user->password)) {
                 Auth::guard()->login($user);
-                return redirect()->route("page.index");
+                return redirect()->route("home");
                 // return back()->withInput();
 
             }else{
@@ -82,6 +79,6 @@ class AuthController extends Controller
     {
         Auth::logout();
         Auth::guard()->logout();
-        return redirect()->route("page.index");
+        return redirect()->route("home");
     }
 }

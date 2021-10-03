@@ -22,7 +22,7 @@ class Product extends Model
         'title',
         'description',
         'price',
-        'quatity',
+        // 'quatity',
         'status',
         'image',
         'category',
