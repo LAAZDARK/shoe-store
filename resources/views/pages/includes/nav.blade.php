@@ -9,8 +9,8 @@
                 <div class="header-bottom-wrapper">
                     <div class="logo-2 sports-logo">
                         <a href="{{ route('home')}}">
-                            <img src="assets/img/logo/logoShoeStoreTransparent.png" width="200px" height="60px" alt="logo-shoe-store">
-                            {{-- <img src="assets/img/logo/logo-7.png" alt=""> --}}
+                            <img src="{{ asset('assets/img/logo/logoShoeStoreTransparent.png')}}" width="200px" height="60px" alt="logo-shoe-store">
+
                         </a>
                     </div>
                     <div class="menu-style-2 sports-menu menu-hover">

@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="book-banner-wrapper mr-20">
-                    <img src="assets/img/slider/home-5.jpg" alt="">
+                    <img src="{{ asset('assets/img/slider/home-5.jpg')}}" alt="">
                     <div class="banner-book-style1">
                         <h3>Descuentos <br>Diciembre</h3>
                         <h2>50%</h2>
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-6">
                 <div class="book-banner-wrapper ml-20">
-                    <img src="assets/img/slider/home-6.jpg" alt="">
+                    <img src="{{ asset('assets/img/slider/home-6.jpg')}}" alt="">
                     <div class="banner-book-style2 text-center">
                         {{-- <h2>Learn More </h2> --}}
                         {{-- <img src="assets/img/icon-img/2.png" alt=""> --}}
@@ -55,7 +55,7 @@
     </div>
 </div>
 <!-- banner area end -->
-<!-- top month area start -->
+<!-- top  -->
 <div class="top-month pb-120">
     <div class="container">
         <div class="section-title-3 text-center mb-70">
@@ -65,10 +65,6 @@
             <div class="col-md-4">
                 <div class="writer-wrapper">
                     <img src="assets/img/slider/home-4.jpg" alt="">
-                    {{-- <div class="writer-content">
-                        <h4>Mildred Turner</h4>
-                        <span>Book Writer & <br>Member of bishwo shahitto kendro</span>
-                    </div> --}}
                 </div>
             </div>
             <div class="col-md-8">
@@ -77,14 +73,11 @@
                         <div class="product-wrapper">
                             <div class="product-img-2">
                                 <a href="#">
-                                    {{-- <img src="assets/img/product/book/12.jpg" alt=""> --}}
                                     <img src="https://picsum.photos/325/350" alt="">
                                 </a>
                                 <div class="product-action-2">
                                     <a class="animate-left add-style-2" title="Agregar a carrito" href="#">Agregar a carrito <i class="ti-shopping-cart"></i></a>
-                                    {{-- <a class="animate-right wishlist-style-2" title="wishlist" href="#">
-                                        <i class="ti-heart"></i>
-                                    </a> --}}
+
                                 </div>
                             </div>
                             <div class="product-content-3 text-center">
@@ -101,14 +94,12 @@
                         <div class="product-wrapper">
                             <div class="product-img-2">
                                 <a href="#">
-                                    {{-- <img src="assets/img/product/book/13.jpg" alt=""> --}}
+
                                     <img src="https://picsum.photos/325/350" alt="">
                                 </a>
                                 <div class="product-action-2">
                                     <a class="animate-left add-style-2" title="Agregar a carrito" href="#">Agregar a carrito <i class="ti-shopping-cart"></i></a>
-                                    {{-- <a class="animate-right wishlist-style-2" title="wishlist" href="#">
-                                        <i class="ti-heart"></i>
-                                    </a> --}}
+
                                 </div>
                             </div>
                             <div class="product-content-3 text-center">
@@ -125,14 +116,12 @@
                         <div class="product-wrapper">
                             <div class="product-img-2">
                                 <a href="#">
-                                    {{-- <img src="assets/img/product/book/12.jpg" alt=""> --}}
+
                                     <img src="https://picsum.photos/325/350" alt="">
                                 </a>
                                 <div class="product-action-2">
                                     <a class="animate-left add-style-2" title="Agregar a carrito" href="#">Agregar a carrito <i class="ti-shopping-cart"></i></a>
-                                    {{-- <a class="animate-right wishlist-style-2" title="wishlist" href="#">
-                                        <i class="ti-heart"></i>
-                                    </a> --}}
+
                                 </div>
                             </div>
                             <div class="product-content-3 text-center">
@@ -152,7 +141,7 @@
         </div>
     </div>
 </div>
-<!-- top month area end -->
+<!-- top  -->
 <!-- blog area start -->
 <div class="blog-area pt-120 pb-80">
     <div class="container">
