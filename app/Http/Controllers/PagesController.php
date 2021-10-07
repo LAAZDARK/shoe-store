@@ -18,10 +18,14 @@ class PagesController extends Controller
 
     public function viewHome()
     {
-        // $users = User::all();
-
         return view('pages.index');
     }
+
+    public function viewIdentity()
+    {
+        return view('pages.identity');
+    }
+
     public function viewLogin()
     {
         return view('pages.login');

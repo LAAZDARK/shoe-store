@@ -1,5 +1,5 @@
 <footer class="footer-area">
-    {{-- <div class="footer-top-area bg-img pt-105 pb-65"  data-overlay="9">
+    <div class="footer-top-area bg-img pt-105 pb-65"  data-overlay="9">
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-md-3">
@@ -20,10 +20,11 @@
                         <h3 class="footer-widget-title">Paginas</h3>
                         <div class="footer-widget-content">
                             <ul>
-                                <li><a href="#">Tienda</a></li>
-                                <li><a href="#">Cabalero</a></li>
-                                <li><a href="#">Dama</a></li>
-                                <li><a href="#">Niños</a></li>
+                                <li><a href="#">Productos</a></li>
+                                <li><a href="#">Identidad</a></li>
+                                <li><a href="#">Contacto</a></li>
+                                <li><a href="#">Terminos y condiciones</a></li>
+                                <li><a href="#">Aviso de privacidad</a></li>
                             </ul>
                         </div>
                     </div>
@@ -52,7 +53,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
     <div class="footer-bottom black-bg ptb-20">
         <div class="container">
             <div class="row">

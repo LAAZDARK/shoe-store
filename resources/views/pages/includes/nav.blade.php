@@ -17,8 +17,8 @@
                         <nav>
                             <ul>
                                 <li><a href="{{ route('home')}}"> Inicio  </a></li>
-                                <li><a href="#">Tienda</a></li>
-                                <li><a href="#">Ofertas</a></li>
+                                <li><a href="#">Productos</a></li>
+                                <li><a href="{{ route('page.identity')}}">Identidad</a></li>
                                 <li><a href="#">Contacto</a></li>
                                 @if (!Auth::check())
                                 <li><a href="#">Registrarse</a></li>
