@@ -24,11 +24,16 @@ Route::get("/", [PagesController::class, "viewHome"])->name('home');
 
 Route::get("/registro", [PagesController::class, "viewRegister"])->name('page.register');
 Route::post("/register", [AuthController::class, "register"])->name('register');
-Route::get("/login", [PagesController::class, "viewLogin"])->name('view.login');
+Route::get("/login", [PagesController::class, "viewLogin"])->name('page.login');
 Route::post("/login", [AuthController::class, "login"])->name('login');
+Route::get("/logout", [AuthController::class, "logout"])->name('logout');
 
 Route::get("/perfil", [PagesController::class, "viewProfile"])->name('page.perfil');
 Route::get("/identidad", [PagesController::class, "viewIdentity"])->name('page.identity');
+Route::get("/privacidad", [PagesController::class, "viewPrivacy"])->name('page.privacy');
+Route::get("/terminos", [PagesController::class, "viewTerms"])->name('page.terms');
+Route::get("/nosotros", [PagesController::class, "viewAbout"])->name('page.about');
+Route::get("/contacto", [PagesController::class, "viewContact"])->name('page.contact');
 
 Route::get("/factura", [PagesController::class, "viewBilling"])->name('page.billing');
 Route::get("/user/{id}", [PagesController::class, "show"])->name('page.user.show');

@@ -9,7 +9,7 @@
                 <div class="header-bottom-wrapper">
                     <div class="logo-2 sports-logo">
                         <a href="{{ route('home')}}">
-                            <img src="{{ asset('assets/img/logo/logoShoeStoreTransparent.png')}}" width="200px" height="60px" alt="logo-shoe-store">
+                            <img src="{{ asset('assets/img/logo/logoShoeStoreTransparent.png')}}" width="150px" height="60px" alt="logo-shoe-store">
 
                         </a>
                     </div>
@@ -19,13 +19,14 @@
                                 <li><a href="{{ route('home')}}"> Inicio  </a></li>
                                 <li><a href="#">Productos</a></li>
                                 <li><a href="{{ route('page.identity')}}">Identidad</a></li>
-                                <li><a href="#">Contacto</a></li>
+                                <li><a href="{{ route('page.about')}}">Nosotros</a></li>
+                                <li><a href="{{ route('page.contact')}}">Contacto</a></li>
                                 @if (!Auth::check())
-                                <li><a href="#">Registrarse</a></li>
-                                <li><a href="#">Iniciar sesión</a></li>
+                                <li><a href="{{ route('page.register')}}">Registrarse</a></li>
+                                <li><a href="{{ route('page.login')}}">Iniciar sesión</a></li>
                                 @else
-                                <li><a href="{{ route('page.perfil')}}">Mi Cuenta</a></li>
-                                <li><a href="#">Cerrar sesión</a></li>
+                                <li><a href="{{ route('page.perfil')}}">Perfil</a></li>
+                                <li><a href="{{ route('logout')}}">Cerrar</a></li>
                                 @endif
                             </ul>
                         </nav>

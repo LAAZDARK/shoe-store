@@ -26,6 +26,23 @@ class PagesController extends Controller
         return view('pages.identity');
     }
 
+    public function viewPrivacy()
+    {
+        return view('pages.privacy');
+    }
+    public function viewTerms()
+    {
+        return view('pages.terms');
+    }
+    public function viewAbout()
+    {
+        return view('pages.about');
+    }
+    public function viewContact()
+    {
+        return view('pages.contact');
+    }
+
     public function viewLogin()
     {
         return view('pages.login');

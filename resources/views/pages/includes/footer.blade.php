@@ -7,9 +7,9 @@
                         <h3 class="footer-widget-title">Accesos</h3>
                         <div class="footer-widget-content">
                             <ul>
-                                <li><a href="#">Iniciar sesión</a></li>
-                                <li><a href="#">Registro</a></li>
-                                <li><a href="#">Perfil</a></li>
+                                <li><a href="{{ route('page.login')}}">Iniciar sesión</a></li>
+                                <li><a href="{{ route('page.register')}}">Registro</a></li>
+                                <li><a href="{{ route('page.perfil')}}">Perfil</a></li>
                                 <li><a href="#">Compras</a></li>
                             </ul>
                         </div>
@@ -21,10 +21,10 @@
                         <div class="footer-widget-content">
                             <ul>
                                 <li><a href="#">Productos</a></li>
-                                <li><a href="#">Identidad</a></li>
-                                <li><a href="#">Contacto</a></li>
-                                <li><a href="#">Terminos y condiciones</a></li>
-                                <li><a href="#">Aviso de privacidad</a></li>
+                                <li><a href="{{ route('page.identity')}}">Identidad</a></li>
+                                <li><a href="{{ route('page.contact')}}">Contacto</a></li>
+                                <li><a href="{{ route('page.terms')}}">Terminos y condiciones</a></li>
+                                <li><a href="{{ route('page.privacy')}}">Aviso de privacidad</a></li>
                             </ul>
                         </div>
                     </div>

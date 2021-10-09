@@ -9,7 +9,7 @@
                 <div class="slider-animation slider-content-book fadeinup-animated">
                     <h1 class="animated"><span>Vive</span> la</h1>
                     <h2 class="animated">moda.</h2>
-                    <p class="animated">Contamos con las mejores marcas reconocidas a nivel mundial.</p>
+                    <p class="animated">Contamos con las mejores marcas de calzado para toda la familia.</p>
                     <a href="shop.html">Tienda</a>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 <div class="slider-animation slider-content-book fadeinup-animated">
                     <h1 class="animated"><span>Vive</span> la</h1>
                     <h2 class="animated">moda.</h2>
-                    <p class="animated">Contamos con las mejores marcas reconocidas a nivel mundial.</p>
+                    <p class="animated">Contamos con las mejores marcas de calzado para toda la familia.</p>
                     <a href="shop.html">Tienda</a>
                 </div>
             </div>
