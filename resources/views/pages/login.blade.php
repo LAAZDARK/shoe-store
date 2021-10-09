@@ -9,7 +9,7 @@
                 <div class="login">
                     <div class="login-form-container">
                         <div class="login-form">
-                            <form action=" {{ route('login')}} " method="post">
+                            <form action=" {{ route('auth.login')}} " method="post">
                                 @csrf
                                 <input type="text" name="email" placeholder="Coreo electrónico">
                                 <input type="password" name="password" placeholder="Contraseña">

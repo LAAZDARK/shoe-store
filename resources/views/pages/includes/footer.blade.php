@@ -7,7 +7,7 @@
                         <h3 class="footer-widget-title">Accesos</h3>
                         <div class="footer-widget-content">
                             <ul>
-                                <li><a href="{{ route('page.login')}}">Iniciar sesión</a></li>
+                                <li><a href="{{ route('login')}}">Iniciar sesión</a></li>
                                 <li><a href="{{ route('page.register')}}">Registro</a></li>
                                 <li><a href="{{ route('page.perfil')}}">Perfil</a></li>
                                 <li><a href="#">Compras</a></li>
@@ -20,7 +20,7 @@
                         <h3 class="footer-widget-title">Paginas</h3>
                         <div class="footer-widget-content">
                             <ul>
-                                <li><a href="#">Productos</a></li>
+                                <li><a href="{{ route('page.store')}}">Productos</a></li>
                                 <li><a href="{{ route('page.identity')}}">Identidad</a></li>
                                 <li><a href="{{ route('page.contact')}}">Contacto</a></li>
                                 <li><a href="{{ route('page.terms')}}">Terminos y condiciones</a></li>

@@ -17,13 +17,13 @@
                         <nav>
                             <ul>
                                 <li><a href="{{ route('home')}}"> Inicio  </a></li>
-                                <li><a href="#">Productos</a></li>
+                                <li><a href="{{ route('page.store')}}">Productos</a></li>
                                 <li><a href="{{ route('page.identity')}}">Identidad</a></li>
                                 <li><a href="{{ route('page.about')}}">Nosotros</a></li>
                                 <li><a href="{{ route('page.contact')}}">Contacto</a></li>
                                 @if (!Auth::check())
                                 <li><a href="{{ route('page.register')}}">Registrarse</a></li>
-                                <li><a href="{{ route('page.login')}}">Iniciar sesión</a></li>
+                                <li><a href="{{ route('login')}}">Iniciar sesión</a></li>
                                 @else
                                 <li><a href="{{ route('page.perfil')}}">Perfil</a></li>
                                 <li><a href="{{ route('logout')}}">Cerrar</a></li>

@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="book-banner-wrapper mr-20">
-                    <img src="{{ asset('assets/img/slider/home-5.jpg')}}" alt="">
+                    <img src="{{ asset('assets/img/slider/home-5.jpg')}}" width="500px" height="400px"alt="">
                     <div class="banner-book-style1">
                         <h3>Descuentos <br>Diciembre</h3>
                         <h2>50%</h2>
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-6">
                 <div class="book-banner-wrapper ml-20">
-                    <img src="{{ asset('assets/img/slider/home-6.jpg')}}" alt="">
+                    <img src="{{ asset('assets/img/slider/home-6.jpg')}}" width="500px" height="400px"alt="">
                     <div class="banner-book-style2 text-center">
                         {{-- <h2>Learn More </h2> --}}
                         {{-- <img src="assets/img/icon-img/2.png" alt=""> --}}
