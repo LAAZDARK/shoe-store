@@ -1,36 +1,4 @@
-/*
-    Template Name: Ezone - Minimalist eCommerce HTML5 Template
-    Description: This is html5 template
-    Author: HasTech
-    Version: 1.0
 
-*/
-/*================================================
-[  Table of contents  ]
-================================================
-01. General
-02. Page section margin padding 
-03. Section title 1
-04. Section title 2
-05. button
-06. button small
-07. share button
-08. Text color
-09. Input
-10. Extra class
-11. Tool tip
-12. loading
-13. Box Layout
-14. Back to top
-15. Basic margin padding
- 
-======================================
-[ End table content ]
-======================================*/
-
-/*************************
-    General
-*************************/
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Roboto+Slab:300,400,700|Open+Sans:300,300i,400,400i,600,700,800');
 body {
     font-family: 'Poppins', sans-serif;
@@ -75,10 +43,10 @@ input {
     outline: medium none;
     color: #686868;
 }
-.uppercase { 
+.uppercase {
     text-transform: uppercase
 }
-.capitalize { 
+.capitalize {
     text-transform: capitalize
 }
 h1,
@@ -99,8 +67,8 @@ h2 a,
 h3 a,
 h4 a,
 h5 a,
-h6 a { 
-    color: inherit 
+h6 a {
+    color: inherit
 }
 h1 {
     font-size: 46px;
@@ -744,7 +712,7 @@ textarea:focus {
 .pt-205 { padding-top: 205px }
 .pt-200 { padding-top: 200px }
 .pt-365 { padding-top: 365px }
-.pt-370 { padding-top: 370px }   
+.pt-370 { padding-top: 370px }
 .pt-380 { padding-top: 380px }
 /*************************
         Padding right
@@ -852,7 +820,7 @@ textarea:focus {
 
 
 /***************************
-    Page section padding 
+    Page section padding
 ****************************/
 .ptb-0 { padding: 0 }
 .ptb-10 { padding: 10px 0 }
@@ -890,7 +858,7 @@ textarea:focus {
 .ptb-310 { padding: 310px 0 }
 
 /***************************
-    Page section margin 
+    Page section margin
 ****************************/
 .mtb-0 { margin: 0 }
 .mtb-10 { margin: 10px 0 }
@@ -954,7 +922,7 @@ textarea:focus {
     width: 100%;
 }
  /*************************************
-    Background variation set 
+    Background variation set
  **************************************/
 /*colored background*/
  .white-bg { background: #fff; }
@@ -982,7 +950,7 @@ textarea:focus {
 /* black overlay */
 [data-overlay] {
   position: relative;
-} 
+}
 [data-overlay]::before {
   background: #000 none repeat scroll 0 0;
   content: "";
@@ -1020,7 +988,7 @@ textarea:focus {
 /* white overlay */
 [white-overlay] {
   position: relative;
-} 
+}
 [white-overlay]::before {
   background: #fff none repeat scroll 0 0;
   content: "";

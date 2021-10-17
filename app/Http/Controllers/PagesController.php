@@ -20,7 +20,13 @@ class PagesController extends Controller
     public function viewHome()
     {
         $recommendations = Product::where('status', 1)->limit(3)->get();
-        return view('pages.index', ['recommendations' => $recommendations]);
+
+        $top =  Product::where('status', 1)->inRandomOrder()->limit(5)->get();
+
+        return view('pages.index', [
+            'recommendations' => $recommendations,
+            'top' => $top
+        ]);
     }
 
     public function viewIdentity()
@@ -123,7 +129,7 @@ class PagesController extends Controller
         // dd($user);
         // $prefix = 'comprobante_';
 
-        $pdf = \PDF::loadView('page.proofOfPayment', ['user' => $user])->setPaper('DL', 'landscape');
+        $pdf = \PDF::loadView('pages.proofOfPayment', ['user' => $user])->setPaper('DL', 'landscape');
         // $storage_path = 'app/public/PDF/' . $prefix . $user->id . '.pdf';
         // $pdf->save(storage_path($storage_path));
         // $response = 'storage/PDF/' . $prefix . $user->id . '.pdf';

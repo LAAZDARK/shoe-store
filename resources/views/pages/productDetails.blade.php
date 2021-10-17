@@ -43,11 +43,20 @@
                             </select>
                         </div>
                     </div>
-                    <div class="quickview-plus-minus">
-                        <div class="quickview-btn-cart">
-                            <a class="btn-hover-black" href="#">Agregar a carrito</a>
+                    @if (!Auth::check())
+                        <div class="quickview-plus-minus">
+                            <div class="quickview-btn-cart">
+                                <a class="btn-hover-black" href="{{ route('login')}}"> Agregar a carrito</a>
+                            </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="quickview-plus-minus">
+                            <div class="quickview-btn-cart">
+                                <a class="btn-hover-black" href="#">Agregar a carrito</a>
+                            </div>
+                        </div>
+                    @endif
+
                     <div class="product-details-cati-tag mt-35">
                         <ul>
                             <li class="categories-title">Categoria :</li>

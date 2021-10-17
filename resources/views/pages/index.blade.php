@@ -8,8 +8,8 @@
             <div class="container">
                 <div class="slider-animation slider-content-book fadeinup-animated">
                     <h1 class="animated"><span>Vive</span> la</h1>
-                    <h2 class="animated">moda.</h2>
-                    <p class="animated">Contamos con las mejores marcas de calzado para toda la familia.</p>
+                    <h2 class="animated text-white">moda.</h2>
+                    <p class="animated text-white">Contamos con las mejores marcas de calzado para toda la familia.</p>
                     <a href="{{ route('page.store')}}">Tienda</a>
                 </div>
             </div>
@@ -70,59 +70,24 @@
             <div class="col-md-8">
                 <div class="book-list-hover">
                     <div class="book-list-active owl-carousel">
-                        <div class="product-wrapper">
-                            <div class="product-img-2">
-                                <a href="#">
-                                    <img src="https://picsum.photos/325/350" alt="">
-                                </a>
-                                <div class="product-action-2">
-                                    <a class="animate-left add-style-2" title="Agregar a carrito" href="#">Agregar a carrito <i class="ti-shopping-cart"></i></a>
+                        @foreach ($top as $item)
+                            <div class="product-wrapper">
+                                <div class="product-img-2">
+                                    <a href="{{ route('page.product.details', $item->id) }}">
+                                        <img src="{{ asset($item->image)}}" width="300px" height="300px" alt="">
+                                    </a>
+                                    <div class="product-action-2">
+                                        <a class="animate-left add-style-2" title="Agregar a carrito" href="#">Agregar a carrito <i class="ti-shopping-cart"></i></a>
 
+                                    </div>
+                                </div>
+                                <div class="product-content-3 text-center">
+                                    <h4><a href="{{ route('page.product.details', $item->id) }}">{{$item->title}}</a></h4>
+                                    <span>{{$item->category}}</span><br>
+                                    <span>${{$item->price}}</span>
                                 </div>
                             </div>
-                            <div class="product-content-3 text-center">
-                                <h4><a href="#">Be like Me  (magazine)</a></h4>
-                                {{-- <div class="product-rating-2">
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                </div> --}}
-                            </div>
-                        </div>
-                        <div class="product-wrapper">
-                            <div class="product-img-2">
-                                <a href="#">
-
-                                    <img src="https://picsum.photos/325/350" alt="">
-                                </a>
-                                <div class="product-action-2">
-                                    <a class="animate-left add-style-2" title="Agregar a carrito" href="#">Agregar a carrito <i class="ti-shopping-cart"></i></a>
-
-                                </div>
-                            </div>
-                            <div class="product-content-3 text-center">
-                                <h4><a href="#">Sky Fall  (Book)</a></h4>
-
-                            </div>
-                        </div>
-                        <div class="product-wrapper">
-                            <div class="product-img-2">
-                                <a href="#">
-
-                                    <img src="https://picsum.photos/325/350" alt="">
-                                </a>
-                                <div class="product-action-2">
-                                    <a class="animate-left add-style-2" title="Agregar a carrito" href="#">Agregar a carrito <i class="ti-shopping-cart"></i></a>
-
-                                </div>
-                            </div>
-                            <div class="product-content-3 text-center">
-                                <h4><a href="#">Tenis deportivos</a></h4>
-
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -145,7 +110,7 @@
                         </div>
                         <div class="blog-info">
                             <h4><a href="{{ route('page.product.details', $item->id) }}">{{$item->title}}</a></h4>
-                            <span>{{$item->created_at}}</span>
+                            <span>{{$item->category}}</span>
                         </div>
                     </div>
                 </div>

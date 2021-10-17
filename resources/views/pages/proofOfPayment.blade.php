@@ -13,7 +13,7 @@
                 left: 0cm;
                 right: 0cm;
                 height: 2cm;
-                background-color: #003566;
+                background-color: #ccc916;
                 color: white;
                 text-align: center;
                 line-height: 30px;

@@ -34,7 +34,10 @@
                             <p><strong>Genero: </strong>{{$user->gender}}</p>
                             <p><strong>Telefono: </strong>{{$user->phone}}</p>
                             <p><strong>Fecha de registro: </strong>{{$user->created_at}}</p>
-                            <a href="{{ route('page.perfil.show')}}">Actualizar</a>
+                            <div class="d-flex justify-content-around">
+                                <a class="btn btn-success" href="{{ route('page.perfil.show')}}">Actualizar</a>
+                                <a class="btn btn-primary text-white" href="{{ route('page.billing.generate', $user->id)}}">Imprimir</a>
+                            </div>
                         </div>
                     </div>
                 </div>
