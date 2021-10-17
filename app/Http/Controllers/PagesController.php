@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Billing;
+use App\Models\Product;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,7 +19,8 @@ class PagesController extends Controller
 
     public function viewHome()
     {
-        return view('pages.index');
+        $recommendations = Product::where('status', 1)->limit(3)->get();
+        return view('pages.index', ['recommendations' => $recommendations]);
     }
 
     public function viewIdentity()
@@ -44,7 +46,8 @@ class PagesController extends Controller
     }
     public function viewStore()
     {
-        return view('pages.store');
+        $products = Product::where('status', 1)->get();
+        return view('pages.store', ['products' => $products]);
     }
 
     public function viewLogin()
@@ -55,6 +58,18 @@ class PagesController extends Controller
     public function viewRegister()
     {
         return view('pages.register');
+    }
+
+    public function viewShoppingCart()
+    {
+        return view('pages.shoppingCart');
+    }
+
+    public function viewProductDetails($id)
+    {
+        $product = Product::findOrFail($id);
+
+        return view('pages.productDetails', ['product' => $product]);
     }
 
     public function viewProfile()

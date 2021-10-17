@@ -31,7 +31,7 @@ class ProductFactory extends Factory
             'category' =>  $this->faker->randomElement(['Dama', 'Caballero', 'Niño', 'Niña']),
             'brand' => $this->faker->randomElement(['ERMENEGILDO', 'ALEXANDER MCQUEEN', 'HUGO BOSS', 'OFF-WHITE', 'BALENCIAGA']),
             'model' => Str::random(5),
-            // 'image' => 'upload-product/pIgNvWQMG8OIQMEMYX9xP0DGGzKwPE9tiiS9rNHq.jpg',
+            'image' => $this->faker->randomElement(['assets/img/product/1.webp', 'assets/img/product/2.webp', 'assets/img/product/3.webp', 'assets/img/product/4.webp']),
             'status' => $this->faker->randomElement([Product::STATUS_TRUE, Product::STATUS_FALSE]),
             'type' =>  $this->faker->randomElement(['Tenis', 'Zapato casual', 'Bota', 'Botin', 'Calzado de protección']),
             'admin_id' => Admin::all()->random()->id

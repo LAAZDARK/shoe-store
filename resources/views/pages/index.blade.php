@@ -10,7 +10,7 @@
                     <h1 class="animated"><span>Vive</span> la</h1>
                     <h2 class="animated">moda.</h2>
                     <p class="animated">Contamos con las mejores marcas de calzado para toda la familia.</p>
-                    <a href="shop.html">Tienda</a>
+                    <a href="{{ route('page.store')}}">Tienda</a>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
                     <h1 class="animated"><span>Vive</span> la</h1>
                     <h2 class="animated">moda.</h2>
                     <p class="animated">Contamos con las mejores marcas de calzado para toda la familia.</p>
-                    <a href="shop.html">Tienda</a>
+                    <a href="{{ route('page.store')}}">Tienda</a>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
                     <div class="banner-book-style1">
                         <h3>Descuentos <br>Diciembre</h3>
                         <h2>50%</h2>
-                        <a class="banner-book-style-btn" href="product-details.html">Mostrar</a>
+                        <a class="banner-book-style-btn" href="{{ route('page.store')}}">Mostrar</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         {{-- <h2>Learn More </h2> --}}
                         {{-- <img src="assets/img/icon-img/2.png" alt=""> --}}
                         <p>Comodidad y diseño en uno.</p>
-                        <a class="banner-book-style-btn" href="product-details.html">Comprar</a>
+                        <a class="banner-book-style-btn" href="{{ route('page.store')}}">Mostrar</a>
                     </div>
                 </div>
             </div>
@@ -82,13 +82,13 @@
                             </div>
                             <div class="product-content-3 text-center">
                                 <h4><a href="#">Be like Me  (magazine)</a></h4>
-                                <div class="product-rating-2">
+                                {{-- <div class="product-rating-2">
                                     <i class="ti-star"></i>
                                     <i class="ti-star"></i>
                                     <i class="ti-star"></i>
                                     <i class="ti-star"></i>
                                     <i class="ti-star"></i>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="product-wrapper">
@@ -104,13 +104,7 @@
                             </div>
                             <div class="product-content-3 text-center">
                                 <h4><a href="#">Sky Fall  (Book)</a></h4>
-                                <div class="product-rating-2">
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                </div>
+
                             </div>
                         </div>
                         <div class="product-wrapper">
@@ -126,13 +120,7 @@
                             </div>
                             <div class="product-content-3 text-center">
                                 <h4><a href="#">Tenis deportivos</a></h4>
-                                <div class="product-rating-2">
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -149,39 +137,19 @@
             <h2>Recomendaciones de los expertos en moda</h2>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="blog-wrapper mb-40">
-                    <div class="blog-img blog-hover">
-                        <a href="#"><img src="https://picsum.photos/370/280" alt=""></a>
-                    </div>
-                    <div class="blog-info">
-                        <h4><a href="#">Zapatos.</a></h4>
-                        <span>03-10-2021</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="blog-wrapper mb-40">
-                    <div class="blog-img blog-hover">
-                        <a href="#"><img src="https://picsum.photos/370/280" alt=""></a>
-                    </div>
-                    <div class="blog-info">
-                        <h4><a href="#">Zapatillas.</a></h4>
-                        <span>03-10-2021</span>
+            @foreach ($recommendations as $item)
+                <div class="col-md-4">
+                    <div class="blog-wrapper mb-40">
+                        <div class="blog-img blog-hover">
+                            <a href="{{ route('page.product.details', $item->id) }}"><img src="{{ asset($item->image)}}" width="300px" height="300px" alt=""></a>
+                        </div>
+                        <div class="blog-info">
+                            <h4><a href="{{ route('page.product.details', $item->id) }}">{{$item->title}}</a></h4>
+                            <span>{{$item->created_at}}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="blog-wrapper mb-40">
-                    <div class="blog-img blog-hover">
-                        <a href="#"><img src="https://picsum.photos/370/280" alt=""></a>
-                    </div>
-                    <div class="blog-info">
-                        <h4><a href="#">Tenis.</a></h4>
-                        <span>03-10-2021</span>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
