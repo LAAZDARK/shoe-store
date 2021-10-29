@@ -34,6 +34,7 @@ Route::get("/privacidad", [PagesController::class, "viewPrivacy"])->name('page.p
 Route::get("/terminos", [PagesController::class, "viewTerms"])->name('page.terms');
 Route::get("/nosotros", [PagesController::class, "viewAbout"])->name('page.about');
 Route::get("/contacto", [PagesController::class, "viewContact"])->name('page.contact');
+Route::post("/contact", [PagesController::class, "storeContact"])->name('contact.store');
 Route::get("/productos", [PagesController::class, "viewStore"])->name('page.store');
 Route::get("/detalles/{id}", [PagesController::class, "viewProductDetails"])->name('page.product.details');
 

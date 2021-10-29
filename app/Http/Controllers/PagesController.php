@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Billing;
+use App\Models\Contact;
 use App\Models\Product;
 use Barryvdh\DomPDF\PDF;
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -46,9 +49,32 @@ class PagesController extends Controller
     {
         return view('pages.about');
     }
+
+    // Contacto
     public function viewContact()
     {
         return view('pages.contact');
+    }
+    public function storeContact(Request $request)
+    {
+        $input = $request->all();
+
+        $rules = array(
+            'name' => 'required',
+            'email' => 'required',
+            'message' => 'required',
+        );
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) return $this->sendError('Validator', $validator->errors()->all(), 422);
+
+        $contact = new Contact();
+        $contact->fill($input);
+        $contact->save();
+
+        Mail::to('laazfull@gmail.com')->send(new ContactMail($contact));
+
+
+        return 'Mensaje enviado';
     }
     public function viewStore()
     {
