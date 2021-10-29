@@ -33,7 +33,7 @@
                     </div>
                     @if (Auth::check())
                     <div class="header-cart">
-                        <a class="icon-cart-furniture white-cart" href="#">
+                        <a class="icon-cart-furniture white-cart" href="{{ route('page.shopping.cart') }}">
                             <i class="ti-shopping-cart"></i>
                             <span class="shop-count-furniture green">02</span>
                         </a>
@@ -74,7 +74,7 @@
                                 </div>
                             </li>
                             <li class="cart-btn-wrapper">
-                                <a class="cart-btn btn-hover" href="#">Ver carrito</a>
+                                <a class="cart-btn btn-hover" href="{{ route('page.shopping.cart') }}">Ver carrito</a>
                                 <a class="cart-btn btn-hover" href="#">Pagar</a>
                             </li>
                         </ul>
@@ -87,10 +87,18 @@
                         <div class="mobile-menu">
                             <nav id="mobile-menu-active">
                                 <ul class="menu-overflow">
-                                    <li><a href="contact.html"> Inicio  </a></li>
-                                    <li><a href="#">Tienda</a></li>
-                                    <li><a href="#">Ofertas</a></li>
-                                    <li><a href="#">Contacto</a></li>
+                                    <li><a href="{{ route('home')}}"> Inicio  </a></li>
+                                    <li><a href="{{ route('page.store')}}">Productos</a></li>
+                                    <li><a href="{{ route('page.identity')}}">Identidad</a></li>
+                                    <li><a href="{{ route('page.about')}}">Nosotros</a></li>
+                                    <li><a href="{{ route('page.contact')}}">Contacto</a></li>
+                                    @if (!Auth::check())
+                                    <li><a href="{{ route('page.register')}}">Registrarse</a></li>
+                                    <li><a href="{{ route('login')}}">Iniciar sesión</a></li>
+                                    @else
+                                    <li><a href="{{ route('page.perfil')}}">Perfil</a></li>
+                                    <li><a href="{{ route('logout')}}">Cerrar</a></li>
+                                    @endif
                                 </ul>
                             </nav>
                         </div>
