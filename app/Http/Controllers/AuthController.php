@@ -52,7 +52,7 @@ class AuthController extends Controller
             $credentials = $request->only('email', 'password');
             $validator = Validator::make($credentials, $rules);
 
-            if ($validator->fails()) return $this->sendError('Validator', $validator->errors()->all(), 422);
+            if ($validator->fails()) return redirect()->route('login')->with("error", "El correo y/o la contrseña son incorrectos");
 
             $user = User::where('email', $input['email'])->first();
             // dd($request->password);
@@ -62,15 +62,14 @@ class AuthController extends Controller
                 return redirect()->route("home");
                 // return back()->withInput();
 
-            }else{
-                dd('no funciona');
-                // return back()->withErrors([
-                //     'password' => ['The provided password does not match our records.']
-                // ]);
             }
 
+
+            return redirect()->route('login')->with("error", "El correo y/o la contrseña son incorrectos");
+
         } catch (\Throwable $th) {
-            return $this->sendError('AuthController Login', $th->getMessage(), $th->getCode());
+            // return $this->sendError('AuthController Login', $th->getMessage(), $th->getCode());
+            return redirect()->route('login')->with("error", "El correo y/o la contrseña son incorrectos");
         }
     }
 

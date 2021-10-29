@@ -6,6 +6,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 col-12 col-lg-6 col-xl-6 ml-auto mr-auto">
+                @if (session('error'))
+                    <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                        {{ session('error') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
                 <div class="login">
                     <div class="login-form-container">
                         <div class="login-form">
