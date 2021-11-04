@@ -1,20 +1,23 @@
-// var numeral = require("numeral");
+// $('#ship-box').on('click', function() {
+//     $('#ship-box-info').slideToggle(1000);
+// });
 
-//   Vue.filter("formatNumber", function (value) {
-//     return numeral(value).format("0,0"); // displaying other groupings/separators is possible, look at the docs
-//   });
-const CartDashboard = {
+const Checkout = {
     data() {
         return {
             cart: null,
             count: null,
-            total: null
+            total: null,
+            user: {},
+            value1: true,
+            amount: {}
         };
     },
     mounted: function() {
 		this.getShopping();
         this.getCountProduct();
         this.getSumProduct();
+        this.getUser();
 	},
     methods: {
         getShopping: function() {
@@ -22,8 +25,13 @@ const CartDashboard = {
             .then(response => {
                 this.cart = response.data.data
             });
-
-
+        },
+        getUser: function() {
+            axios.get(this.$refs.getUser.value)
+            .then(response => {
+                // console.log(response.data.data);
+                this.user = response.data.data
+            });
         },
         getCountProduct: function() {
             axios.get(this.$refs.countProduct.value)
@@ -42,11 +50,17 @@ const CartDashboard = {
             // console.log(id);
 			axios.delete(this.$refs.getCard.value + '/' + id).then(response => { //eliminamos
 				this.getShopping();
-                this.getCountProduct();
-                this.getSumProduct();
 			});
 		},
+        payment: function() {
+            this.amount.total = this.total
+            axios.post(this.$refs.postPayment.value, this.amount)
+            .then(response => {
+               console.log(response.data);
+               window.location.href = response.data;
+            });
+        },
     }
 };
 
-Vue.createApp(CartDashboard).mount("#cart-dashboard");
+Vue.createApp(Checkout).mount("#checkout");

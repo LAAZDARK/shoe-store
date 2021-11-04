@@ -118,6 +118,11 @@ class PagesController extends Controller
         return view('page.billing', ['users' => $users]);
     }
 
+    public function viewCheckout()
+    {
+        return view('pages.checkout');
+    }
+
 
     public function show($id){
 

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PurchaseController;
 
 /*
@@ -45,6 +46,14 @@ Route::middleware('web')->group(function () {
     Route::post("/perfil/update", [UserController::class, "update"])->name('page.perfil.update');
 
     Route::get("/carrito", [PagesController::class, "viewShoppingCart"])->name('page.shopping.cart');
+
+    Route::get("/checkout", [PagesController::class, "viewCheckout"])->name('pay.checkout');
+    Route::post("/payment", [PaymentController::class, "storePayment"])->name('pay.payment');
+
+    Route::get("/payment/approval", [PaymentController::class, "approval"])->name('approval');
+    Route::get("/payment/cancelled", [PaymentController::class, "cancelled"])->name('cancelled');
+
+    Route::get("/user", [UserController::class, "index"])->name('user.index');
 
     Route::get("/factura", [PagesController::class, "viewBilling"])->name('page.billing');
     Route::get("/user/{id}", [PagesController::class, "show"])->name('page.user.show');

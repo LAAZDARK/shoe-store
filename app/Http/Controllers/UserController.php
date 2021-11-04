@@ -17,13 +17,13 @@ class UserController extends Controller
 
 
 
-    // public function index(Request $request)
-    // {
+    public function index(Request $request)
+    {
 
-    //     $user = $request->user();
+        $user = $request->user();
 
-    //     return $this->sendResponse($user, 'usuario');
-    // }
+        return $this->sendResponse($user, 'usuario');
+    }
 
     public function show(Request $request)
     {

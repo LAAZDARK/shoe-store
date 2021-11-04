@@ -25,6 +25,7 @@
                                         <th>Genero</th>
                                         <th>Tipo</th>
                                         <th>Precio</th>
+                                        <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,6 +38,7 @@
                                         <td class="product-name"><a href="#">@{{product.category}} </a></td>
                                         <td class="product-name"><a href="#">@{{product.type}} </a></td>
                                         <td class="product-price-cart"><span class="amount">$@{{product.price}}.00</span></td>
+                                        <td><button class="btn btn-danger btn-sm" v-on:click.prevent="deleteProduct(product.id)">Eliminar</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -50,7 +52,7 @@
                                         <li>IVA<span>$@{{total*.16 | formatNumber}}.00</span></li>
                                         <li>Total<span>$@{{total*1.16 | formatNumber}}.00</span></li>
                                     </ul>
-                                    <a href="#">Pagar</a>
+                                    <a href="{{ route('pay.checkout')}}">Pagar</a>
                                 </div>
                             </div>
                         </div>

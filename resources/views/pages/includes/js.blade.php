@@ -19,7 +19,6 @@
 <script src="{{ asset('assets/js/waypoints.min.js')}}"></script>
 <script src="{{ asset('assets/js/owl.carousel.min.js')}}"></script>
 <script src="{{ asset('assets/js/plugins.js')}}"></script>
-<script src="{{ asset('assets/js/main.js')}}"></script>
 
 @stack('js-lib')
 
@@ -27,6 +26,8 @@
 <script src="{{asset('assets/js/shopping-cart.js')}}"></script>
 <script src="{{asset('assets/js/cart.js')}}"></script>
 <script src="{{asset('assets/js/cart-dashboard.js')}}"></script>
+<script src="{{asset('assets/js/checkout.js')}}"></script>
+<script src="{{ asset('assets/js/main.js')}}"></script>
 @stack('js-script')
 </body>
 
