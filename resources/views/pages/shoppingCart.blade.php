@@ -2,52 +2,60 @@
 
 @section('contenido')
 
-
-<div class="cart-main-area pt-95 pb-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h1 class="cart-heading">Carrito de compras</h1>
-                <form action="#">
-                    <div class="table-content table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Imagen</th>
-                                    <th>Nombre</th>
-                                    <th>Precio</th>
-                                    <th>Talla</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="product-thumbnail">
-                                        <a href="#"><img src="assets/img/cart/1.jpg" alt=""></a>
-                                    </td>
-                                    <td class="product-name"><a href="#">Botas </a></td>
-                                    <td class="product-price-cart"><span class="amount">$165.00</span></td>
-                                    <td class="product-quantity">
-                                        <input value="1" type="number">
-                                    </td>
-                                    <td class="product-subtotal">$165.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 ml-auto">
-                            <div class="cart-page-total">
-                                <h2>Total</h2>
-                                <ul>
-                                    <li>Subtotal<span>100.00</span></li>
-                                    <li>Total<span>100.00</span></li>
-                                </ul>
-                                <a href="#">Pagar</a>
+<div id="cart-dashboard">
+    {{-- Route --}}
+    <input type="hidden" ref="storeCard" value="{{route('purchase.store')}}">
+    <input type="hidden" ref="getCard" value="{{route('purchase.index')}}">
+    <input type="hidden" ref="countProduct" value="{{route('count.product')}}">
+    <input type="hidden" ref="sumProduct" value="{{route('sum.product')}}">
+    {{-- End Route --}}
+    <div class="cart-main-area pt-95 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1 class="cart-heading">Carrito de compras</h1>
+                    <form action="#">
+                        <div class="table-content table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Marca</th>
+                                        <th>Genero</th>
+                                        <th>Tipo</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="product in cart">
+                                        <td class="product-thumbnail">
+                                            <a href="#"><img :src="'/' + product.image"  width="50" height="60" alt=""></a>
+                                        </td>
+                                        <td class="product-name"><a href="#">@{{product.title}} </a></td>
+                                        <td class="product-name"><a href="#">@{{product.brand}}</a></td>
+                                        <td class="product-name"><a href="#">@{{product.category}} </a></td>
+                                        <td class="product-name"><a href="#">@{{product.type}} </a></td>
+                                        <td class="product-price-cart"><span class="amount">$@{{product.price}}.00</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 ml-auto">
+                                <div class="cart-page-total">
+                                    <h2>Total</h2>
+                                    <ul>
+                                        <li>Subtotal<span>$@{{total}}.00</span></li>
+                                        <li>IVA<span>$@{{total*.16 | formatNumber}}.00</span></li>
+                                        <li>Total<span>$@{{total*1.16 | formatNumber}}.00</span></li>
+                                    </ul>
+                                    <a href="#">Pagar</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

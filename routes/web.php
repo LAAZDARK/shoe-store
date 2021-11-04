@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,10 @@ Route::middleware('web')->group(function () {
     Route::get("/user/{id}", [PagesController::class, "show"])->name('page.user.show');
     Route::post("/billing", [PagesController::class, "store"])->name('page.billing.create');
     Route::get("/generar-factura/{id}", [PagesController::class, "billing"])->name('page.billing.generate');
+
+    Route::resource('purchase', PurchaseController::class)->names('purchase');
+    Route::get("/count-product", [PurchaseController::class, "conutProducts"])->name('count.product');
+    Route::get("/sum-product", [PurchaseController::class, "sumTotalProduct"])->name('sum.product');
 
 });
 

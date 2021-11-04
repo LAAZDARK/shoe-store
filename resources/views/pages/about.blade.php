@@ -30,7 +30,7 @@
                 </div>
                 <div class="services-content">
                     <h4>Pedro</h4>
-                    <p>Directo de Finanzas </p>
+                    <p>Director de Finanzas </p>
                 </div>
             </div>
             <div class="single-services mb-40">
@@ -92,7 +92,7 @@
             </div>
             <div class="single-testimonial-2 text-center">
                 <img src="assets/img/team/1.png" alt="">
-                <p>Calidad 100% , me encantan y siempre encuentro todo tipo d calzados, el trato de las dependientas espectacular , super amables.</p>
+                <p>Calidad 100% , me encantan y siempre encuentro todo tipo de calzados, el trato de las dependientas espectacular , super amables.</p>
                 <img src="assets/img/team/2.png" alt="">
                 <h4>Carlos</h4>
                 <span>CEO Flexi</span>

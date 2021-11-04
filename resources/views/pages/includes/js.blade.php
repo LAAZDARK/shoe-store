@@ -24,6 +24,9 @@
 @stack('js-lib')
 
 {{-- <script src="{{asset('js/archivo.js')}}"></script> --}}
+<script src="{{asset('assets/js/shopping-cart.js')}}"></script>
+<script src="{{asset('assets/js/cart.js')}}"></script>
+<script src="{{asset('assets/js/cart-dashboard.js')}}"></script>
 @stack('js-script')
 </body>
 

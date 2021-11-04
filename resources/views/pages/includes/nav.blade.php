@@ -33,51 +33,50 @@
                     </div>
                     @if (Auth::check())
                     <div class="header-cart">
-                        <a class="icon-cart-furniture white-cart" href="{{ route('page.shopping.cart') }}">
-                            <i class="ti-shopping-cart"></i>
-                            <span class="shop-count-furniture green">02</span>
-                        </a>
-                        <ul class="cart-dropdown">
-                            <li class="single-product-cart">
-                                <div class="cart-img">
-                                    <a href="#"><img src="https://picsum.photos/85/101" alt=""></a>
-                                </div>
-                                <div class="cart-title">
-                                    <h5><a href="#"> Zapatos</a></h5>
-                                    <h6><a href="#">Black</a></h6>
-                                    <span>$80.00</span>
-                                </div>
-                                <div class="cart-delete">
-                                    <a href="#"><i class="ti-trash"></i></a>
-                                </div>
-                            </li>
-                            <li class="single-product-cart">
-                                <div class="cart-img">
-                                    <a href="#"><img src="https://picsum.photos/85/101" alt=""></a>
-                                </div>
-                                <div class="cart-title">
-                                    <h5><a href="#"> Botas</a></h5>
-                                    <h6><a href="#">Black</a></h6>
-                                    <span>$80.00</span>
-                                </div>
-                                <div class="cart-delete">
-                                    <a href="#"><i class="ti-trash"></i></a>
-                                </div>
-                            </li>
+                        <div id="cart">
+                            <a class="icon-cart-furniture white-cart" href="{{ route('page.shopping.cart') }}">
+                                <i class="ti-shopping-cart"></i>
+                                <span class="shop-count-furniture green">@{{count}}</span>
+                            </a>
+                            {{-- Routes --}}
+                            <input type="hidden" ref="storeCard" value="{{route('purchase.store')}}">
+                            <input type="hidden" ref="getCard" value="{{route('purchase.index')}}">
+                            <input type="hidden" ref="countProduct" value="{{route('count.product')}}">
+                            <input type="hidden" ref="sumProduct" value="{{route('sum.product')}}">
+                            {{-- end Routes --}}
 
-                            <li class="cart-space">
-                                <div class="cart-sub">
-                                    <h4>Subtotal</h4>
+                            <ul class="cart-dropdown">
+                                <div v-for="product in cart">
+                                    <li class="single-product-cart">
+                                        <div class="cart-img">
+                                            <a href="#"><img :src="'/' + product.image"  width="50" height="60" alt="image-Product"></a>
+
+                                        </div>
+                                        <div class="cart-title">
+                                            <h5><a href="#"> @{{product.title}}</a></h5>
+                                            <span>$@{{product.price}}.00</span>
+                                        </div>
+                                        <div class="cart-delete">
+                                            <button class="btn btn-danger btn-sm" v-on:click.prevent="deleteProduct(product.id)">Eliminar</button>
+                                        </div>
+                                    </li>
                                 </div>
-                                <div class="cart-price">
-                                    <h4>$240.00</h4>
-                                </div>
-                            </li>
-                            <li class="cart-btn-wrapper">
-                                <a class="cart-btn btn-hover" href="{{ route('page.shopping.cart') }}">Ver carrito</a>
-                                <a class="cart-btn btn-hover" href="#">Pagar</a>
-                            </li>
-                        </ul>
+
+
+                                <li class="cart-space">
+                                    <div class="cart-sub">
+                                        <h4>Subtotal</h4>
+                                    </div>
+                                    <div class="cart-price">
+                                        <h4>$@{{total}}.00</h4>
+                                    </div>
+                                </li>
+                                <li class="cart-btn-wrapper">
+                                    <a class="cart-btn btn-hover" href="{{ route('page.shopping.cart') }}">Ver carrito</a>
+                                    <a class="cart-btn btn-hover" href="#">Pagar</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     @endif
 

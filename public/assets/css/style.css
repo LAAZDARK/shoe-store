@@ -8261,3 +8261,6 @@ input.cart-plus-minus-box {
 .modal-content .close:hover {
     color: #050035;
 }
+.image-right{
+    float: right;
+}

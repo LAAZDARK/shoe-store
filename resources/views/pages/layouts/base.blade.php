@@ -13,7 +13,7 @@
 <!--footer-->
 @include('pages.includes.footer')
 {{-- js --}}
-</div>
+{{-- </div> --}}
 
 @include('pages.includes.js')
 

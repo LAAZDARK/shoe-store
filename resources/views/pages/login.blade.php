@@ -16,6 +16,7 @@
                 @endif
                 <div class="login">
                     <div class="login-form-container">
+                        <h1>Login</h1>
                         <div class="login-form">
                             <form action=" {{ route('auth.login')}} " method="post">
                                 @csrf
