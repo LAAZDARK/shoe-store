@@ -11,9 +11,17 @@
         </div>
     </div>
 </div>
+<div class="popular-product-area wrapper-padding-6 pt-115 pb-70 bg-img" style="background-image: url(assets/img/bg/13.jpg)">
+    <div class="container-fluid">
+        <div class="section-title-10 text-center">
+            <h2>Nuestro equipo</h2>
+            <p>Nuestro equipo son los bienes más importantes de la empresa. Ellos son la cara de la empresa y afectan directamente la experiencia y satisfacción del cliente. es por ello que contamos con programas de comunicación, además de considerar cada una de las opiniones de nuestros colaboradores en las decisiones de la empresa.</p>
+        </div>
+    </div>
+</div>
 <div class="services-area wrapper-padding-4 gray-bg pt-120 pb-80">
     <div class="container-fluid">
-        <h2 class="text-center mb-50">Nuestro equipo</h2>
+        {{-- <h2 class="text-center mb-50">Nuestro equipo</h2> --}}
         <div class="services-wrapper">
             <div class="single-services mb-40">
                 <div class="services-img">
