@@ -53,6 +53,7 @@
                             </div>
                             @if (Auth::check())
                                 <input type="hidden" ref="product_id" value="{{$product->id}}">
+                                <input type="hidden" ref="product_name" value="{{$product->title}}">
                                 {{-- <button class="btn-hover-black">Agregar</button> --}}
                                 {{-- <a class="default-btn floatright" :href="addCart">Agregar a carrito</a> --}}
                                 <button class="btn btn-outline-warning btn-lg btn-block">Agregar a carrito</button>

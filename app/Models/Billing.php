@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\Invoice;
 use App\Models\Product;
+use App\Models\Purchase;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -11,17 +13,22 @@ class Billing extends Model
 {
     use HasFactory;
 
+    CONST STATUS_TRUE = 'True';
+    CONST STATUS_FALSE = 'False';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
     protected $fillable = [
-        'quatity',
-        'total',
+        'name',
+        'email',
+        'address',
+        'rfc',
+        'phone',
         'status',
-        'methodOfPayment',
-        'billing_product_id',
+        'comments',
         'user_id'
     ];
 
@@ -30,9 +37,10 @@ class Billing extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function products () {
+    public function purchases () {
 
-        return $this->belongsTo(Product::class);
+        return $this->hasMany(Purchase::class, 'billing_id');
     }
+
 
 }

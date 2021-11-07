@@ -50,8 +50,8 @@ Route::middleware('web')->group(function () {
     Route::get("/checkout", [PagesController::class, "viewCheckout"])->name('pay.checkout');
     Route::post("/payment", [PaymentController::class, "storePayment"])->name('pay.payment');
 
-    Route::get("/payment/approval", [PaymentController::class, "approval"])->name('approval');
-    Route::get("/payment/cancelled", [PaymentController::class, "cancelled"])->name('cancelled');
+    Route::get("/payment/approval", [PaymentController::class, "approval"])->name('page.approval');
+    Route::get("/payment/cancelled", [PaymentController::class, "cancelled"])->name('page.cancelled');
 
     Route::get("/user", [UserController::class, "index"])->name('user.index');
 

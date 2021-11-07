@@ -10,7 +10,8 @@ const Checkout = {
             total: null,
             user: {},
             value1: true,
-            amount: {}
+            amount: {},
+            subtotal: null
         };
     },
     mounted: function() {
@@ -40,8 +41,13 @@ const Checkout = {
         },
         getSumProduct: function() {
             axios.get(this.$refs.sumProduct.value)
-            .then(response => (this.total = response.data.data))
-            console.log(this.total);
+            .then(response => (
+                this.subtotal = response.data.data,
+                this.total = Math.ceil(this.subtotal * 1.16)
+                ))
+            // const resultad = this.total
+            // this.totalAmount = resultad * 1.16
+            // console.log(resultad);
         },
         formatNumber: function(value) {
             return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(value);
@@ -53,7 +59,9 @@ const Checkout = {
 			});
 		},
         payment: function() {
-            this.amount.total = this.total
+            const result = this.total * 1.16
+            console.log(result)
+            this.amount.total = result
             axios.post(this.$refs.postPayment.value, this.amount)
             .then(response => {
                console.log(response.data);

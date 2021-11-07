@@ -103,7 +103,7 @@ class PurchaseController extends Controller
         if ($validator->fails()) return $this->sendError('Error de validacion', $validator->error()->all(), 422);
 
         $purchase = new Purchase();
-        // $purchase->quantity = $request->get('quantity');
+        $purchase->productName = $request->get('productName');
         $purchase->size = $request->get('size');
         $purchase->user_id = $user->id;
         $purchase->product_id = $request->get('product_id');

@@ -6,6 +6,7 @@ const ShoppingCartD = {
                 'product_id': '',
                 'size': '',
                 'price': '',
+                'productName': ''
             },
         };
     },
@@ -14,6 +15,7 @@ const ShoppingCartD = {
             this.form.product_id = this.$refs.product_id.value;
             this.form.size = this.$refs.product_size.value;
             this.form.price = this.$refs.price.value;
+            this.form.productName = this.$refs.product_name.value;
 
             console.log(this.form);
 

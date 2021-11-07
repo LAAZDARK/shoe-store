@@ -16,10 +16,12 @@ class CreatePurchaseTable extends Migration
         Schema::create('purchase', function (Blueprint $table) {
             $table->increments('id');
             $table->string('status');
+            $table->string('productName');
             $table->unsignedInteger('price');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('product_id');
-            $table->string('size');
+            $table->unsignedInteger('billing_id')->nullable();
+            $table->string('size')->nullable();
             $table->timestamps();
         });
     }

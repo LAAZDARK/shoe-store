@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Billing;
 use App\Models\Contact;
 use App\Models\Product;
+use App\Models\Purchase;
 use Barryvdh\DomPDF\PDF;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
@@ -107,7 +108,10 @@ class PagesController extends Controller
     public function viewProfile()
     {
         $user = Auth::user();
-        return view('pages.profile', ['user' => $user]);
+
+        $billings = $user->billings()->with('purchases')->get();
+
+        return view('pages.profile', ['user' => $user], ['billings' => $billings]);
     }
 
 
@@ -154,10 +158,14 @@ class PagesController extends Controller
         return redirect()->route("page.billing");
     }
 
-    public function billing($id){
+    public function billing($id)
+    {
 
-        $user = User::findOrFail($id);
-        // dd($user);
+        $user = Auth::user();
+
+
+        $billings = $user->billings()->where('id', $id)->with('purchases')->get();
+        dd($billings);
         // $prefix = 'comprobante_';
 
         $pdf = \PDF::loadView('pages.proofOfPayment', ['user' => $user])->setPaper('DL', 'landscape');

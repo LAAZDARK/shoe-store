@@ -11,6 +11,7 @@
 <input type="hidden" ref="postPayment" value="{{route('pay.payment')}}">
 {{-- Route --}}
 <form method="post" name="formPay" action="{{ route('pay.payment') }}">
+    @csrf
 <div class="checkout-area ptb-100">
     <div class="container">
         <div class="row">
@@ -38,61 +39,67 @@
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Nombre completo<span class="required">*</span></label>
-                                            <input type="text" placeholder="" />
+                                            <input type="text" name="name" placeholder="" />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Razon social</label>
-                                            <input type="text" placeholder="" />
+                                            <input type="text" name="businessName" placeholder="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>RFC <span class="required">*</span></label>
+                                            <input type="text" name="rfc" placeholder="" />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Dirección <span class="required">*</span></label>
-                                            <input type="text" placeholder="Calle..." />
+                                            <input type="text" name="address" placeholder="Calle..." />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
-                                            <input type="text" placeholder="Departamento #21" />
+                                            <input type="text" name="address1" placeholder="Departamento #21" />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Ciudad <span class="required">*</span></label>
-                                            <input type="text" placeholder="Ciudad de México" />
+                                            <input type="text" name="city" placeholder="Ciudad de México" />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Estado / Alcaldia <span class="required">*</span></label>
-                                            <input type="text" placeholder="" />
+                                            <input type="text" name="state" placeholder="" />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Codigo postal <span class="required">*</span></label>
-                                            <input type="text" placeholder="Postcode / Zip" />
+                                            <input type="text" name=zipcode placeholder="Postcode / Zip" />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Correo electrónico<span class="required">*</span></label>
-                                            <input type="email" placeholder="user@mail.com" />
+                                            <input type="email" name="email"placeholder="user@mail.com" />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Telefono <span class="required">*</span></label>
-                                            <input type="text" placeholder="5547113677" />
+                                            <input type="text" name="phone" placeholder="5547113677" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="order-notes">
                                     <div class="checkout-form-list mrg-nn">
                                         <label>Comentarios de entrega</label>
-                                        <textarea id="checkout-mess" cols="30" rows="10"
+                                        <textarea id="checkout-mess" cols="30" rows="10" name="comments"
                                             placeholder="Notas acerca de la entrega o producto"></textarea>
                                     </div>
                                 </div>
@@ -123,15 +130,15 @@
                                     <tfoot>
                                         <tr class="cart-subtotal">
                                             <th><strong>Subtotal</strong></th>
-                                            <td><span class="amount">$@{{total}}.00</span></td>
+                                            <td><span class="amount">$@{{subtotal}}.00</span></td>
                                         </tr>
                                         <tr class="cart-subtotal">
                                             <th><strong>IVA</strong></th>
-                                            <td><span class="amount">$@{{total*.16 | formatNumber}}.00</span></td>
+                                            <td><span class="amount">$@{{subtotal*.16 | formatNumber}}.00</span></td>
                                         </tr>
                                         <tr class="order-total">
                                             <th><strong>Total</strong></th>
-                                            <td><strong><span class="amount">$@{{total*1.16 | formatNumber}}.00</span></strong>
+                                            <td><strong><span class="amount">$@{{total | formatNumber}}.00</span></strong>
                                             </td>
                                         </tr>
                                     </tfoot>

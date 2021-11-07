@@ -44,6 +44,7 @@ class PaypalService
 
     public function handlePayment(Request $request)
     {
+        // $total = $request->total * 1.16;
 
         $order = $this->createOrder($request->total, 'mxn');
 
@@ -65,10 +66,10 @@ class PaypalService
 
             $name = $payment->payer->name->given_name;
 
-            return redirect()->route('page.index')->with("success", "¡Gracias {$name}!, Enviaremos su pedido lo antes posible");
+            return redirect()->route('page.perfil')->with("success", "¡Gracias por su compra!, enviaremos su pedido lo antes posible");
         }
 
-        return redirect()->route('page.index')->with('error', 'Ha ocurrido un error con el pago');
+        return redirect()->route('page.perfil')->with('error', 'Ha ocurrido un error con el pago');
     }
 
     public function createOrder($value, $currency)
@@ -88,7 +89,7 @@ class PaypalService
                     ]
                 ],
                 'application_context' => [
-                    'brand_name' => config('app.name', 'masmoda'),
+                    'brand_name' => config('app.name', 'Shoe Store'),
                     'shipping_preference' => 'NO_SHIPPING',
                     'user_action' => 'PAY_NOW',
                     'return_url' => route('page.approval'),

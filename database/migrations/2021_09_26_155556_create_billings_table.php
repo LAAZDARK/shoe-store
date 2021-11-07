@@ -15,12 +15,14 @@ class CreateBillingsTable extends Migration
     {
         Schema::create('billings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('quatity')->unsigned()->nullable();
-            $table->integer('total')->unsigned()->nullable();
+            $table->string('name')->nullable();
+            $table->string('rfc')->nullable();
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('comments')->nullable();
             $table->string('status')->default(false);
-            $table->string('methodOfPayment')->nullable();
             $table->unsignedInteger('user_id')->nullable();
-            $table->unsignedInteger('billing_product_id')->nullable();
             $table->timestamps();
         });
     }
