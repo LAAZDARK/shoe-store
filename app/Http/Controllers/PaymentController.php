@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Billing;
-use App\Models\Invoice;
 use App\Models\Purchase;
+use App\Mail\PurchaseMail;
 use App\Traits\ResponseApi;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use App\Services\PaypalService;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -84,11 +84,8 @@ class PaymentController extends Controller
             $billing->status = Billing::STATUS_TRUE;
             $billing->save();
 
+            Mail::to('laazfull@gmail.com')->send(new PurchaseMail($user));
 
-
-            // return $this->sendResponse($shop, 'Pagado', 200);
         }
-
-        // return $this->sendResponse('index purchase', 'Usuario no autenticado', 200);
     }
 }

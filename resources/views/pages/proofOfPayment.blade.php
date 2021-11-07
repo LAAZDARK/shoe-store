@@ -40,82 +40,97 @@
         </header>
 
 
-        <div id="body">
+        {{-- <div> --}}
 
-            <div id="section_header">
-                {{-- <img src="{{config('app.name')}}" alt="{{config('app.name')}}" /> --}}
-                {{-- <img src="{{ public_path('images/logoJobOffer.png') }}" style="width: 50px; height: 50px"> --}}
-            </div>
-
-            <div id="content">
+            {{-- <div > --}}
 
                 <div class="page" style="font-size: 7pt">
+                    {{-- {{$billings->name}} --}}
 
                     <table style="width: 100%; font-size: 10pt; margin: 20px;">
 
 
-                        @if($user->id)
+                        @foreach ($billings as $billing)
+                            {{-- {{$billing}} --}}
+                            @if($billing->id)
+                                <tr>
+                                    <td>No. ticket: <strong>{{$billing->id}}</strong></td>
+                                </tr>
+                            @endif
+                            <tr>
+                                <td>Frecuencia: <strong>Pago único</strong></td>
+
+                            </tr>
+                            @if($billing->name)
+                            <tr>
+                                <td>Nombre: <strong> {{$billing->name}}</strong></td>
+
+                            </tr>
+                            @endif
+                            @if($billing->email)
+                            <tr>
+                                <td>Email: <strong> {{ $billing->email }} </strong></td>
+
+                            </tr>
+                            @endif
+                            @if($billing->phone)
+                            <tr>
+                                <td>Teléfono: <strong> {{ $billing->phone}} </strong></td>
+
+                            </tr>
+                            @endif
+                            @if($billing->rfc)
+                            <tr>
+                                <td>RFC: <strong>{{$billing->rfc}}</strong></td>
+
+                            </tr>
+                            @endif
+                            @if($billing->address)
+                            <tr>
+                                <td>Domicilio Fiscal: <strong>{{$billing->address}}</strong></td>
+                            </tr>
+                            @endif
+
+                            {{-- @if($billing->methodOfPayment) --}}
+                            <tr>
+                                <td>Metodo de pago: <strong>Tarjeta de debito</strong></td>
+                            </tr>
+                            {{-- @endif --}}
+
+                            @if($billing->total)
+                            <tr>
+                                <td>Total: <strong>{{$billing->total}}</strong></td>
+                            </tr>
+                            @endif
+                            @if($billing->purchases)
+                                @foreach($billing->purchases as $item)
+                                    <td>Producto: <strong>{{$item->productName}}</strong></td>
+                                    <td>Precio: <strong>{{$item->price}}</strong></td>
+                                @endforeach
+                            @endif
+                        @endforeach
+
+                        {{-- @if($billing->id)
                         <tr>
-                            <td>No. ticket: <strong>{{$user->id}}</strong></td>
+                            <td>No. ticket: <strong>{{$billing->id}}</strong></td>
 
                         </tr>
                         @endif
-                        <tr>
-                            <td>Frecuencia: <strong>Pago único</strong></td>
+                         --}}
 
-                        </tr>
-                        <tr>
-                            <td>Nombre: <strong> {{$user->name}}</strong></td>
-
-                        </tr>
-                        <tr>
-                            <td>Email: <strong> {{ $user->email }} </strong></td>
-
-                        </tr>
-
-                        @if($user->phone)
-                        <tr>
-                            <td>Teléfono: <strong> {{ $user->phone}} </strong></td>
-
-                        </tr>
-                        @endif
-                        @if($user->rfc)
-                        <tr>
-                            <td>RFC: <strong>{{$user->rfc}}</strong></td>
-
-                        </tr>
-                        @endif
-                        @if($user->address)
-                        <tr>
-                            <td>Domicilio Fiscal: <strong>{{$user->address}}</strong></td>
-                        </tr>
-                        @endif
-
-                        @if($user->methodOfPayment)
-                        <tr>
-                            <td>Metodo de pago: <strong>{{$user->methodOfPayment}}</strong></td>
-                        </tr>
-                        @endif
-
-                        @if($user->total)
-                        <tr>
-                            <td>Total: <strong>{{$user->total}}</strong></td>
-                        </tr>
-                        @endif
-
-                        <tr>
+                        {{-- <tr>
                             <td><h2>¡Muchas gracias por su compra!</h2></td>
 
-                        </tr>
+                        </tr> --}}
 
                     </table>
 
                 </div>
 
-            </div>
+            {{-- </div>
 
 
-        </div>
+        </div> --}}
 
 
     </body>

@@ -164,14 +164,10 @@ class PagesController extends Controller
         $user = Auth::user();
 
 
-        $billings = $user->billings()->where('id', $id)->with('purchases')->get();
-        dd($billings);
-        // $prefix = 'comprobante_';
+        $billings = Billing::where('id', $id)->where('user_id', $user->id)->with('purchases')->get();
 
-        $pdf = \PDF::loadView('pages.proofOfPayment', ['user' => $user])->setPaper('DL', 'landscape');
-        // $storage_path = 'app/public/PDF/' . $prefix . $user->id . '.pdf';
-        // $pdf->save(storage_path($storage_path));
-        // $response = 'storage/PDF/' . $prefix . $user->id . '.pdf';
+        $pdf = \PDF::loadView('pages.proofOfPayment', ['billings' => $billings])->setPaper('DL', 'landscape');
+
 
         return $pdf->download('archivo.pdf');
     }
