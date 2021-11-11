@@ -48,14 +48,15 @@
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Estatus</th>
+                            <th>Monto</th>
                             <th>Fecha</th>
-                            <th>Opcion</th>
+                            <th>Opción</th>
 
 
                         </tr>
 
+                        @foreach ($billings as $billing )
                         <tr>
-                            @foreach ($billings as $billing )
 
                             {{-- @foreach ($billing as $item ) --}}
 
@@ -63,6 +64,7 @@
                                 <td>{{ $billing->id }}</td>
                                 <td>{{ $billing->name }}</td>
                                 <td>{{ $billing->status }}</td>
+                                <td>${{ $billing->total }}</td>
                                 <td>{{ $billing->created_at }}</td>
                                 {{-- @foreach($billing->purchases as $item)
                                 <td>{{$item->id}}</td>
@@ -70,15 +72,11 @@
                                 {{-- <td><button type="button" name="delete" class="btn btn-danger btn-sm delete" @click="deleteData(billing.id)">Delete</button></td> --}}
                                 <td><a class="btn btn-primary text-white" href="{{ route('page.billing.generate', $billing->id)}}">Imprimir factura</a></td>
 
-                            {{-- @endforeach --}}
-
-                            {{-- {{$billing->id}} --}}
 
 
-
-                            @endforeach
 
                         </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>

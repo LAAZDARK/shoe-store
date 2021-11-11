@@ -45,9 +45,9 @@
             {{-- <div > --}}
 
                 <div class="page" style="font-size: 7pt">
-                    {{-- {{$billings->name}} --}}
+                    {{-- {{$billings}} --}}
 
-                    <table style="width: 100%; font-size: 10pt; margin: 20px;">
+                    <table style="width: 100%; font-size: 14pt; margin: 10px;">
 
 
                         @foreach ($billings as $billing)
@@ -90,6 +90,11 @@
                                 <td>Domicilio Fiscal: <strong>{{$billing->address}}</strong></td>
                             </tr>
                             @endif
+                            @if($billing->comments)
+                            <tr>
+                                <td>Comentarios de entrega: <strong>{{$billing->comments}}</strong></td>
+                            </tr>
+                            @endif
 
                             {{-- @if($billing->methodOfPayment) --}}
                             <tr>
@@ -97,31 +102,38 @@
                             </tr>
                             {{-- @endif --}}
 
+                            <tr>
+                                <td><strong>Nombre</strong></td>
+                                <td><strong>Unidad</strong></td>
+                                <td><strong>Precio</strong></td>
+                            </tr>
+
+                            @if($billing->purchases)
+
+                                @foreach($billing->purchases as $item)
+                                <tr>
+                                    <td>{{$item->productName}}</td>
+                                    <td>1</td>
+                                    <td>{{$item->price}}</td>
+                                </tr>
+                                @endforeach
+
+                            @endif
                             @if($billing->total)
                             <tr>
-                                <td>Total: <strong>{{$billing->total}}</strong></td>
+                                <td></td>
+                                <td style="text-align: right;">Total: </td>
+                                <td><strong>{{$billing->total}}</strong></td>
                             </tr>
-                            @endif
-                            @if($billing->purchases)
-                                @foreach($billing->purchases as $item)
-                                    <td>Producto: <strong>{{$item->productName}}</strong></td>
-                                    <td>Precio: <strong>{{$item->price}}</strong></td>
-                                @endforeach
                             @endif
                         @endforeach
 
-                        {{-- @if($billing->id)
+                    </table>
+                    <table style="width: 100%; font-size: 14pt; margin: 10px; text-align: center;">
                         <tr>
-                            <td>No. ticket: <strong>{{$billing->id}}</strong></td>
-
-                        </tr>
-                        @endif
-                         --}}
-
-                        {{-- <tr>
                             <td><h2>¡Muchas gracias por su compra!</h2></td>
 
-                        </tr> --}}
+                        </tr>
 
                     </table>
 

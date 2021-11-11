@@ -13,16 +13,16 @@ class PurchaseMail extends Mailable
 
     public $subject = 'Venta realizada';
 
-    public $sale;
+    public $sales;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($sale)
+    public function __construct($sales)
     {
-        $this->sale = $sale;
+        $this->sales = $sales;
     }
 
     /**

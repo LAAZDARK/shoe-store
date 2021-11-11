@@ -29,13 +29,13 @@
 
                             </div>
                             <div class="different-address">
-                                <div class="ship-different-title">
+                                {{-- <div class="ship-different-title">
                                     <h3>
                                         <label>¿Agregar una dirección diferente?</label>
                                         <input id="ship-box" type="checkbox" />
                                     </h3>
-                                </div>
-                                <div id="ship-box-info" class="row">
+                                </div> --}}
+                                {{-- <div id="ship-box-info" class="row">
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Nombre completo<span class="required">*</span></label>
@@ -95,7 +95,7 @@
                                             <input type="text" name="phone" placeholder="5547113677" />
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="order-notes">
                                     <div class="checkout-form-list mrg-nn">
                                         <label>Comentarios de entrega</label>

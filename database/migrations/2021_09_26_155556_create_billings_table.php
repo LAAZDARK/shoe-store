@@ -21,6 +21,7 @@ class CreateBillingsTable extends Migration
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('comments')->nullable();
+            $table->float('total')->nullable();
             $table->string('status')->default(false);
             $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();

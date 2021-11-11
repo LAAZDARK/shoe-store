@@ -166,7 +166,7 @@ class PagesController extends Controller
 
         $billings = Billing::where('id', $id)->where('user_id', $user->id)->with('purchases')->get();
 
-        $pdf = \PDF::loadView('pages.proofOfPayment', ['billings' => $billings])->setPaper('DL', 'landscape');
+        $pdf = \PDF::loadView('pages.proofOfPayment', ['billings' => $billings])->setPaper(array(0, 0, 595, 841), 'portrait');
 
 
         return $pdf->download('archivo.pdf');

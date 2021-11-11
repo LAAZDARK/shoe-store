@@ -29,6 +29,7 @@ class Billing extends Model
         'phone',
         'status',
         'comments',
+        'total',
         'user_id'
     ];
 

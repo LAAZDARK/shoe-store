@@ -37,7 +37,8 @@ class PaymentController extends Controller
         $billing->address = $user->address;
         $billing->rfc = $user->rfc;
         $billing->phone = $user->phone;
-        $billing->comments = $input['comments'] || null;
+        $billing->comments = $request->input('comments', 'N/A');
+        $billing->total = $request->input('total', 'N/A');
         $billing->status = Billing::STATUS_FALSE;
         $billing->save();
 
@@ -83,8 +84,9 @@ class PaymentController extends Controller
             }
             $billing->status = Billing::STATUS_TRUE;
             $billing->save();
+            $billings = Billing::where('id', $billing->id)->where('user_id', $user->id)->with('purchases')->get();
 
-            Mail::to('laazfull@gmail.com')->send(new PurchaseMail($user));
+            Mail::to('laazfull@gmail.com')->send(new PurchaseMail($billings));
 
         }
     }
