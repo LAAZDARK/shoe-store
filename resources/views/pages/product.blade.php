@@ -12,19 +12,36 @@
                         <div class="login-form">
                             <form action="{{ route('store.product')}}" method="post">
                                 @csrf
-                                <input type="text" name="name" placeholder="Nombre" required>
-                                <input type="text" name="email" placeholder="Correo electrónico" required>
-                                <input type="text" name="password" placeholder="Contraseña" required>
-                                <input type="text" name="password_confirmation" placeholder="Confirmar contraseña" required>
-                                <input name="phone" placeholder="Telefono" type="text">
-                                <input type="text" name="rfc" placeholder="RFC" required>
-                                <input type="text" name="address" placeholder="Dirección" required>
+                                <input type="text" name="title" placeholder="Titulo" required>
+                                <textarea cols="20" rows="10" name="description" placeholder="Descripción completa del producto"></textarea>
+                                <input type="text" name="price" placeholder="Precio" required>
+                                <input name="brand" placeholder="Empresa" type="text">
+                                <input type="text" name="model" placeholder="Modelo" required>
+                                <input type="text" name="image" placeholder="Imagen" value="assets/img/product/" required>
                                 <div class="form-group col-md-4">
-                                    <label for="gender">Genero</label>
-                                    <select id="gender" name="gender" class="form-control form-control-sm">
+                                    <label for="status">Estatus</label>
+                                    <select id="status" name="status" class="form-control form-control-sm">
+                                        <option value="1" selected>Activo</option>
+                                        <option value="0">Inactivo</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="type">Tipo</label>
+                                    <select id="type" name="type" class="form-control form-control-sm">
+                                        <option value="Zapato" selected>Zapato</option>
+                                        <option value="Tenis">Tenis</option>
+                                        <option value="Bota">Bota</option>
+                                        <option value="Botin">Botin</option>
+                                        <option value="Chancla">Chancla</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="category">Categoria</label>
+                                    <select id="category" name="category" class="form-control form-control-sm">
                                         <option value="Hombre" selected>Hombre</option>
                                         <option value="Mujer">Mujer</option>
-                                        <option value="Otro">Otro</option>
+                                        <option value="Niño">Niño</option>
+                                        <option value="Niña">Niña</option>
                                     </select>
                                 </div>
                                 <div class="button-box">

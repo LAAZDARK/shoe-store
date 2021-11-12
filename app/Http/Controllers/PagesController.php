@@ -190,18 +190,28 @@ class PagesController extends Controller
         return $pdf->download('archivo.pdf');
     }
 
+    /**
+     * Vista para el registro de productos en la base de datos
+     * @return view('pages.product')
+     */
 
     public function viewProduct()
     {
         return view('pages.product');
     }
 
-    public function storeProduct(Request $request)
+    /**
+     * Registra los productos en la db
+     *
+     * @param \Illuminate\Http\Request  $request
+     * @return Object $product
+     */
+    public function storeProduct(Request $request): Object
     {
         $input = $request->all();
 
         $rules = array(
-            'name' => 'required',
+            'title' => 'required',
         );
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) return $this->sendError('Validator', $validator->errors()->all(), 422);
