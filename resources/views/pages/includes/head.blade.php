@@ -8,6 +8,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <!-- all css here -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css')}}">

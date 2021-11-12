@@ -114,8 +114,13 @@ class PagesController extends Controller
     public function viewProductDetails($id)
     {
         $product = Product::findOrFail($id);
+        $recommendations = Product::where('status', 1)->limit(3)->get();
 
-        return view('pages.productDetails', ['product' => $product]);
+        return view('pages.productDetails',
+        [
+            'product' => $product,
+            'recommendations' => $recommendations
+        ]);
     }
 
     public function viewProfile()

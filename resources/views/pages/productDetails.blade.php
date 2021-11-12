@@ -110,7 +110,7 @@
             </div>
         </div>
     </div>
-    <div class="product-description-review-area pb-90">
+    <div class="product-description-review-area">
         <div class="container">
             <div class="product-description-review text-center">
                 <div class="description-review-title nav" role=tablist>
@@ -126,47 +126,40 @@
                         <p>{{$product->description}}</p>
                     </div>
                     <div class="tab-pane fade" id="pro-review" role="tabpanel">
-                        <a href="#">Escribe tu primer comentario!</a>
+                        <div class="single-testimonial-2 text-center mb-0">
+                            <img src="assets/img/team/1.png" alt="">
+                            <p>Calidad 100% , me encantan y siempre encuentro todo tipo de calzados, el trato de las dependientas espectacular , super amables.</p>
+                            <img src="assets/img/team/2.png" alt="">
+                            <h4>Carlos</h4>
+                            <span>CEO Flexi</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<!-- product area start -->
-    <div class="product-area pb-95">
-        <div class="container">
-            <div class="section-title-3 text-center mb-50">
-                <h2>Otras personas también compraron</h2>
-            </div>
-            <div class="product-style">
-                <div class="related-product-active owl-carousel">
-                    {{-- <div class="product-wrapper">
-                        <div class="product-img">
-                            <a href="#">
-                                <img src="assets/img/product/fashion-colorful/1.jpg" alt="">
-                            </a>
-                            <span>hot</span>
-                            <div class="product-action">
-                                <a class="animate-left" title="Wishlist" href="#">
-                                    <i class="pe-7s-like"></i>
-                                </a>
-                                <a class="animate-top" title="Add To Cart" href="#">
-                                    <i class="pe-7s-cart"></i>
-                                </a>
-                                <a class="animate-right" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#">
-                                    <i class="pe-7s-look"></i>
-                                </a>
-                            </div>
+    <div class="blog-area pt-120 pb-80">
+    <div class="container">
+        <div class="section-title-3 text-center mb-50">
+            <h2>Recomendaciones de los expertos en moda</h2>
+        </div>
+        <div class="row">
+            @foreach ($recommendations as $item)
+                <div class="col-md-4">
+                    <div class="blog-wrapper mb-40">
+                        <div class="blog-img blog-hover">
+                            <a href="{{ route('page.product.details', $item->id) }}"><img src="{{ asset($item->image)}}" width="300px" height="300px" alt=""></a>
                         </div>
-                        <div class="product-content">
-                            <h4><a href="#">Arifo Stylas Dress</a></h4>
-                            <span>$115.00</span>
+                        <div class="blog-info">
+                            <h4><a href="{{ route('page.product.details', $item->id) }}">{{$item->title}}</a></h4>
+                            <span>{{$item->category}}</span>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
+</div>
 {{-- </div> --}}
 
 @endsection

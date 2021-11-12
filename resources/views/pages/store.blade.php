@@ -81,9 +81,9 @@
                                                     <img src="{{ asset($item->image)}}" alt="">
                                                 </a>
                                                 <div class="product-action">
-                                                    <a class="animate-top" title="Agregar a carrito" href="#">
+                                                    {{-- <a class="animate-top" title="Agregar a carrito" href="#">
                                                         <i class="pe-7s-cart"></i>
-                                                    </a>
+                                                    </a> --}}
                                                     <a class="animate-right" title="Detalles" href="{{ route('page.product.details', $item->id) }}">
                                                         <i class="pe-7s-look"></i>
                                                     </a>
@@ -113,9 +113,9 @@
                                                     <img src="{{ asset($item->image)}}" alt="">
                                                 </a>
                                                 <div class="product-action">
-                                                    <a class="animate-top" title="Agregar a carrito" href="#">
+                                                    {{-- <a class="animate-top" title="Agregar a carrito" href="#">
                                                         <i class="pe-7s-cart"></i>
-                                                    </a>
+                                                    </a> --}}
                                                     <a class="animate-right" title="Detalles" href="{{ route('page.product.details', $item->id) }}">
                                                         <i class="pe-7s-look"></i>
                                                     </a>
@@ -144,9 +144,9 @@
                                                     <img src="{{ asset($item->image)}}" alt="">
                                                 </a>
                                                 <div class="product-action">
-                                                    <a class="animate-top" title="Agregar a carrito" href="#">
+                                                    {{-- <a class="animate-top" title="Agregar a carrito" href="#">
                                                         <i class="pe-7s-cart"></i>
-                                                    </a>
+                                                    </a> --}}
                                                     <a class="animate-right" title="Detalles" href="{{ route('page.product.details', $item->id) }}">
                                                         <i class="pe-7s-look"></i>
                                                     </a>
@@ -176,9 +176,9 @@
                                                     <img src="{{ asset($item->image)}}" alt="">
                                                 </a>
                                                 <div class="product-action">
-                                                    <a class="animate-top" title="Agregar a carrito" href="#">
+                                                    {{-- <a class="animate-top" title="Agregar a carrito" href="#">
                                                         <i class="pe-7s-cart"></i>
-                                                    </a>
+                                                    </a> --}}
                                                     <a class="animate-right" title="Detalles" href="{{ route('page.product.details', $item->id) }}">
                                                         <i class="pe-7s-look"></i>
                                                     </a>

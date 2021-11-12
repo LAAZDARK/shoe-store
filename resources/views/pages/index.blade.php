@@ -77,7 +77,7 @@
                                         <img src="{{ asset($item->image)}}" width="300px" height="300px" alt="">
                                     </a>
                                     <div class="product-action-2">
-                                        <a class="animate-left add-style-2" title="Agregar a carrito" href="#">Agregar a carrito <i class="ti-shopping-cart"></i></a>
+                                        <a class="animate-left add-style-2" title="Agregar a carrito" href="{{ route('page.product.details', $item->id) }}">Ver detalles<i class="ti-plus"></i></a>
 
                                     </div>
                                 </div>
