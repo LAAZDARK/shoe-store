@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Purchase;
 use Barryvdh\DomPDF\PDF;
 use App\Mail\ContactMail;
+use App\Traits\ResponseApi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Validator;
 
 class PagesController extends Controller
 {
+    use ResponseApi;
 
     public function viewHome()
     {
@@ -81,6 +83,17 @@ class PagesController extends Controller
     {
         $products = Product::where('status', 1)->get();
         return view('pages.store', ['products' => $products]);
+    }
+
+    public function listProduct()
+    {
+        $products = Product::where('status', 1)->get();
+
+        foreach ($products as $product) {
+            $product['url'] = url("detalles/$product->id");
+        }
+
+        return $this->sendResponse($products, 'Lista de productos', 200);
     }
 
     public function viewLogin()
@@ -170,6 +183,31 @@ class PagesController extends Controller
 
 
         return $pdf->download('archivo.pdf');
+    }
+
+
+    public function viewProduct()
+    {
+        return view('pages.product');
+    }
+
+    public function storeProduct(Request $request)
+    {
+        $input = $request->all();
+
+        $rules = array(
+            'name' => 'required',
+        );
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) return $this->sendError('Validator', $validator->errors()->all(), 422);
+
+
+        $product = new Product();
+        $product->fill($input);
+        $product->save();
+
+
+        return $this->sendResponse($product, 'Se agrego correctamente', 200);
     }
 
 

@@ -38,9 +38,9 @@ Route::get("/nosotros", [PagesController::class, "viewAbout"])->name('page.about
 Route::get("/contacto", [PagesController::class, "viewContact"])->name('page.contact');
 Route::post("/contact", [PagesController::class, "storeContact"])->name('contact.store');
 Route::get("/productos", [PagesController::class, "viewStore"])->name('page.store');
-Route::get("/detalles/{id}", [PagesController::class, "viewProductDetails"])->name('page.product.details');
+Route::get("/detalles/{id?}", [PagesController::class, "viewProductDetails"])->name('page.product.details');
 
-Route::middleware('web')->group(function () {
+Route::middleware('auth:web')->group(function () {
     Route::get("/perfil", [PagesController::class, "viewProfile"])->name('page.perfil');
     Route::get("/perfil/actualizar", [UserController::class, "show"])->name('page.perfil.show');
     Route::post("/perfil/update", [UserController::class, "update"])->name('page.perfil.update');
@@ -66,4 +66,7 @@ Route::middleware('web')->group(function () {
 
 });
 
+Route::get("/productos/agregar", [PagesController::class, "viewProduct"])->name('page.product');
+Route::post("/product", [PagesController::class, "storeProduct"])->name('store.product');
 
+Route::get("/product/list", [PagesController::class, "listProduct"])->name('list.product');
