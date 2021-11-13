@@ -35,10 +35,16 @@
                                     <label>Tamaño*</label>
                                     <select class="select-product" ref="product_size" name="size">
                                         <option value="">- Seleccionar talla -</option>
-                                        <option value="xl">xl</option>
-                                        <option value="ml">ml</option>
-                                        <option value="m">m</option>
-                                        <option value="sl">sl</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
                                     </select>
                                 </div>
                                 {{-- <div class="select-option-part">
@@ -123,6 +129,9 @@
                     <a href="#pro-video" data-toggle="tab" role="tab" aria-selected="false">
                         Video
                     </a>
+                    <a href="#pro-politica" data-toggle="tab" role="tab" aria-selected="false">
+                        Política de Devoluciones
+                    </a>
                 </div>
                 <div class="description-review-text tab-content">
                     <div class="tab-pane active show fade" id="pro-dec" role="tabpanel">
@@ -140,6 +149,15 @@
                     <div class="tab-pane fade" id="pro-video" role="tabpanel">
                         <iframe width="853" height="480" src="https://www.youtube.com/embed/F1zfZsn8oT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         {{-- <p>{{$product->description}}</p> --}}
+                    </div>
+                    <div class="tab-pane fade" id="pro-politica" role="tabpanel">
+                        <ul>
+                            <li>La devolución del producto procederá cuando el producto no exceda más de 30 días desde la confirmación de compra, así como cuando la devolución derive de situaciones convencionales.</li>
+                            <li>El usuario deberá devolver el producto en sus condiciones originales, no sucio, sin manchas o rallas, sin muestras aparentes de uso, con su empaquetado, número de autorización de devolución (o guía).</li>
+                            <li>Deberás de conservar la caja y el empaque original de los productos, ya que serán necesarios en caso de que se quiera realizar una devolución.</li>
+                            <li>La empresa realizará una inspección física del producto para validar que el producto venga en las mismas condiciones en que se envió.</li>
+                            <li>Si el producto no cumple con las condiciones mencionadas, la empresa no aceptará la devolución y el producto será devuelto al usuario, el usuario deberá cubrir los gastos de regreso si la devolución no procede.</li>
+                        </ul>
                     </div>
                 </div>
             </div>

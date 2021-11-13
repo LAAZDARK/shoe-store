@@ -3,7 +3,7 @@
 @section('contenido')
 
 
-<div class="popular-product-area wrapper-padding-6 pt-115 pb-70 bg-img" style="background-image: url(assets/img/bg/13.jpg)">
+<div class="popular-product-area wrapper-padding-6 pt-75 pb-50 bg-img" style="background-image: url(assets/img/bg/13.jpg)">
     <div class="container-fluid">
         <div class="section-title-10 text-center">
             <h2>Historia</h2>
@@ -11,7 +11,16 @@
         </div>
     </div>
 </div>
-<div class="popular-product-area wrapper-padding-6 pt-115 pb-70 bg-img" style="background-image: url(assets/img/bg/13.jpg)">
+<div class="popular-product-area wrapper-padding-6 pt-50 pb-70 bg-img" style="background-image: url(assets/img/bg/13.jpg)">
+    <div class="container-fluid">
+        <div class="section-title-10 text-center">
+            <h2>LA DIFERENCIA SHOE STORE</h2>
+            <p>ALTA TECNOLOGÍA PARA EL MÁXIMO CONFORT DE TUS PIES</p>
+            <P>Somos expertos en calzado y más de ochenta años de permanencia ininterrumpida en el mercado nos avalan. Pero ¿por qué nos prefieren nuestros consumidores? Una de las razones podrás verla en el éste gráfico, que te muestra algunos atributos que son parte de la identidad de nuestro calzado.</P>
+        </div>
+    </div>
+</div>
+<div class="popular-product-area wrapper-padding-6 pt-50 pb-70 bg-img" style="background-image: url(assets/img/bg/13.jpg)">
     <div class="container-fluid">
         <div class="section-title-10 text-center">
             <h2>Nuestro equipo</h2>

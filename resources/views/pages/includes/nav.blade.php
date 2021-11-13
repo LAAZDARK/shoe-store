@@ -26,7 +26,7 @@
                                 <li><a href="{{ route('login')}}">Iniciar sesión</a></li>
                                 @else
                                 <li><a href="{{ route('page.perfil')}}">Perfil</a></li>
-                                <li><a href="{{ route('logout')}}">Cerrar</a></li>
+                                <li><a href="{{ route('logout')}}">Salir</a></li>
                                 @endif
                             </ul>
                         </nav>
@@ -73,7 +73,7 @@
                                 </li>
                                 <li class="cart-btn-wrapper">
                                     <a class="cart-btn btn-hover" href="{{ route('page.shopping.cart') }}">Ver carrito</a>
-                                    <a class="cart-btn btn-hover" href="#">Pagar</a>
+                                    <a class="cart-btn btn-hover" href="{{ route('pay.checkout')}}">Pagar</a>
                                 </li>
                             </ul>
                         </div>
