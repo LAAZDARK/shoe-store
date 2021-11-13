@@ -38,8 +38,8 @@
                                 <div class="form-group col-md-4">
                                     <label for="category">Categoria</label>
                                     <select id="category" name="category" class="form-control form-control-sm">
-                                        <option value="Hombre" selected>Hombre</option>
-                                        <option value="Mujer">Mujer</option>
+                                        <option value="Caballero" selected>Caballero</option>
+                                        <option value="Dama">Dama</option>
                                         <option value="Niño">Niño</option>
                                         <option value="Niña">Niña</option>
                                     </select>

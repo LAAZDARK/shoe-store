@@ -29,7 +29,7 @@
                                 <span>${{$product->price}}</span>
                                 <input type="hidden" ref="price" value="{{$product->price}}">
                             </div>
-                            <p>{{$product->description}}</p>
+                            <p>{{ Str::limit($product->description, 100)}}</p>
                             <div class="quick-view-select">
                                 <div class="select-option-part">
                                     <label>Tamaño*</label>
@@ -120,6 +120,9 @@
                     <a href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
                         Opiniones de clientes
                     </a>
+                    <a href="#pro-video" data-toggle="tab" role="tab" aria-selected="false">
+                        Video
+                    </a>
                 </div>
                 <div class="description-review-text tab-content">
                     <div class="tab-pane active show fade" id="pro-dec" role="tabpanel">
@@ -133,6 +136,10 @@
                             <h4>Carlos</h4>
                             <span>CEO Flexi</span>
                         </div>
+                    </div>
+                    <div class="tab-pane fade" id="pro-video" role="tabpanel">
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/F1zfZsn8oT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        {{-- <p>{{$product->description}}</p> --}}
                     </div>
                 </div>
             </div>
