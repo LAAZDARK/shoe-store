@@ -37,7 +37,11 @@
                                         <td class="product-name"><a href="#">@{{product.brand}}</a></td>
                                         <td class="product-name"><a href="#">@{{product.category}} </a></td>
                                         <td class="product-name"><a href="#">@{{product.type}} </a></td>
-                                        <td class="product-price-cart"><span class="amount">$@{{product.price}}.00</span></td>
+                                        <td class="product-price-cart"><span class="amount">$@{{product.price}}.00</span>
+                                            {{-- <span v-if="product.status === '0'">
+                                                <span>$@{{product.price}}</span>
+                                            </span> --}}
+                                        </td>
                                         <td><button class="btn btn-danger btn-sm" v-on:click.prevent="deleteProduct(product.id)">Eliminar</button></td>
                                     </tr>
                                 </tbody>

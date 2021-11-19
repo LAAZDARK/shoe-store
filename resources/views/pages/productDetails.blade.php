@@ -26,7 +26,10 @@
                             @csrf
                             <h3>{{$product->title}}</h3>
                             <div class="details-price">
-                                <span>${{$product->price}}</span>
+                                <span>${{$product->price}}</span>&nbsp;&nbsp;
+                                @if ($product->status == 0)
+                                    <strike class="text-danger">${{$product->price+120}}</strike>
+                                @endif
                                 <input type="hidden" ref="price" value="{{$product->price}}">
                             </div>
                             <p>{{ Str::limit($product->description, 100)}}</p>

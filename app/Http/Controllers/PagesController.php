@@ -81,13 +81,15 @@ class PagesController extends Controller
     }
     public function viewStore()
     {
-        $products = Product::where('status', 1)->get();
+        // $products = Product::where('status', 1)->get();
+        $products = Product::all();
         return view('pages.store', ['products' => $products]);
     }
 
     public function listProduct()
     {
-        $products = Product::where('status', 1)->get();
+        // $products = Product::where('status', 1)->get();
+        $products = Product::all();
 
         foreach ($products as $product) {
             $product['url'] = url("detalles/$product->id");

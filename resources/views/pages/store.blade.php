@@ -91,7 +91,10 @@
                                             </div>
                                             <div class="funiture-product-content text-center">
                                                 <h4><a href="{{ route('page.product.details', $item->id) }}">{{$item->title}}</a></h4>
-                                                <span>${{$item->price}}</span>
+                                                <span>${{$item->price}}</span>&nbsp;&nbsp;
+                                                @if ($item->status == 0)
+                                                    <strike class="text-danger">${{$item->price+120}}</strike>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -123,7 +126,10 @@
                                             </div>
                                             <div class="funiture-product-content text-center">
                                                 <h4><a href="{{ route('page.product.details', $item->id) }}">{{$item->title}}</a></h4>
-                                                <span>${{$item->price}}</span>
+                                                <span>${{$item->price}}</span>&nbsp;&nbsp;
+                                                @if ($item->status == 0)
+                                                    <strike class="text-danger">${{$item->price+120}}</strike>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
